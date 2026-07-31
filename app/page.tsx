@@ -42,11 +42,18 @@ const foods = [
   },
 ];
 
-const currentLeoImages = [
+const carouselImages = [
   { image: "/images/1785530326793_image.png", label: "O físico como consequência" },
   { image: "/images/1785530329200_image.png", label: "Comida de verdade na rotina" },
   { image: "/images/1785530370386_image.png", label: "Treino com direção" },
   { image: "/images/1785530373363_image.png", label: "Energia que aparece no corpo" },
+  { image: "/images/1785530347484_image.png", label: "Proteína de verdade no prato" },
+  { image: "/images/1785530351080_image.png", label: "Uma refeição completa" },
+  { image: "/images/1785530338310_image.png", label: "O simples que funciona" },
+  { image: "/images/1785530342591_image.png", label: "Minerais que vêm da natureza" },
+  { image: "/images/1785530340559_image.png", label: "Meu snack ancestral" },
+  { image: "/images/1785530345622_image.png", label: "Frutas na minha rotina" },
+  { image: "/images/1785530355245_image.png", label: "Comida de verdade onde eu estiver" },
 ];
 
 const modules = [
@@ -60,7 +67,7 @@ const modules = [
 ];
 
 const bonuses = [
-  "Consultoria personalizada com o Léo, com treino e dieta montados para você",
+  "Consultoria personalizada comigo, com treino e dieta montados por mim para você",
   "Guia prático para montar seu prato de comida de verdade",
   "Lista de compras Back to Nature",
   "Estratégias para comer bem fora de casa",
@@ -133,8 +140,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Léo Frota treinando com halteres">
-            <img src="/images/1785530370386_image.png" alt="Léo Frota durante treino intenso com halteres" width="840" height="1500" />
+          <div className="hero-visual" aria-label="Eu treinando com halteres">
+            <img src="/images/1785530370386_image.png" alt="Eu durante um treino intenso com halteres" width="840" height="1500" />
             <div className="hero-stamp">
               <strong>VOLTE</strong>
               <span>A SENTIR-SE VIVO</span>
@@ -155,24 +162,24 @@ export default function Home() {
 
           <div className="delivery-grid">
             <article><span>01</span><h3>Curso completo</h3><p>Os 7 módulos do Método Libertação Ancestral, do fundamento à aplicação.</p></article>
-            <article><span>02</span><h3>Consultoria com o Léo</h3><p>Uma orientação personalizada para entender seu momento, objetivo e rotina.</p></article>
-            <article><span>03</span><h3>Treino personalizado</h3><p>Um treino montado pelo Léo para o seu nível e para onde você quer chegar.</p></article>
+            <article><span>02</span><h3>Consultoria comigo</h3><p>Vou entender seu momento, seu objetivo e sua rotina para te orientar de forma personalizada.</p></article>
+            <article><span>03</span><h3>Treino personalizado</h3><p>Eu monto seu treino para o seu nível e para onde você quer chegar.</p></article>
             <article><span>04</span><h3>Dieta personalizada</h3><p>Uma estratégia alimentar montada para você, alinhada ao protocolo e à sua realidade.</p></article>
             <article><span>05</span><h3>Bônus + acesso vitalício</h3><p>Materiais práticos, futuras atualizações e liberdade para rever quando quiser.</p></article>
           </div>
 
           <div className="carousel-header">
-            <div><span className="section-number">BACK TO NATURE NA PRÁTICA</span><h3>O método que o Léo vive todos os dias.</h3></div>
+            <div><span className="section-number">BACK TO NATURE NA PRÁTICA</span><h3>O método que eu vivo todos os dias.</h3></div>
             <div className="carousel-controls">
               <button type="button" onClick={() => moveCarousel(-1)} aria-label="Imagem anterior">←</button>
               <button type="button" onClick={() => moveCarousel(1)} aria-label="Próxima imagem">→</button>
             </div>
           </div>
           <div className="creator-carousel" ref={carouselRef}>
-            {currentLeoImages.map((item, index) => (
+            {carouselImages.map((item, index) => (
               <figure key={item.image}>
-                <img loading="lazy" src={item.image} alt={`${item.label}, foto ${index + 1} de Léo Frota`} width="950" height="1268" />
-                <figcaption><span>0{index + 1}</span><strong>{item.label}</strong></figcaption>
+                <img loading="lazy" src={item.image} alt={`${item.label}, minha foto ${index + 1}`} width="950" height="1268" />
+                <figcaption><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.label}</strong></figcaption>
               </figure>
             ))}
           </div>
@@ -214,20 +221,20 @@ export default function Home() {
 
           <div className="comparison primary-comparison">
             <figure>
-              <div className="image-wrap"><img loading="lazy" src="/images/1785530233131_image.png" alt="Léo antes da mudança de estilo de vida" width="950" height="1268" /></div>
+              <div className="image-wrap"><img loading="lazy" src="/images/1785530233131_image.png" alt="Eu antes da minha mudança de estilo de vida" width="950" height="1268" /></div>
               <figcaption><span>ANTES</span><strong>Distante do meu potencial</strong></figcaption>
             </figure>
             <div className="versus" aria-hidden="true">VS</div>
             <figure>
-              <div className="image-wrap"><img loading="lazy" src="/images/1785530326793_image.png" alt="Léo após aplicar seu novo estilo de vida" width="950" height="1268" /></div>
+              <div className="image-wrap"><img loading="lazy" src="/images/1785530326793_image.png" alt="Eu depois de aplicar meu novo estilo de vida" width="950" height="1268" /></div>
               <figcaption><span>DEPOIS</span><strong>Energia que aparece no corpo</strong></figcaption>
             </figure>
           </div>
 
           <div className="story-row">
             <div className="comparison mini-comparison">
-              <figure><img loading="lazy" src="/images/1785530315808_image.png" alt="Léo em sua antiga rotina com fast-food" width="510" height="512" /><span>Velha rotina</span></figure>
-              <figure><img loading="lazy" src="/images/1785530373363_image.png" alt="Léo atualmente em frente ao espelho" width="950" height="1268" /><span>Nova identidade</span></figure>
+              <figure><img loading="lazy" src="/images/1785530315808_image.png" alt="Eu na minha antiga rotina com fast-food" width="510" height="512" /><span>Velha rotina</span></figure>
+              <figure><img loading="lazy" src="/images/1785530373363_image.png" alt="Eu atualmente em frente ao espelho" width="950" height="1268" /><span>Nova identidade</span></figure>
             </div>
             <div className="story-copy">
               <span className="quote-mark" aria-hidden="true">“</span>
@@ -262,7 +269,7 @@ export default function Home() {
       <section className="solution-section">
         <div className="container solution-grid">
           <div className="solution-photo">
-            <img loading="lazy" src="/images/1785530329200_image.png" alt="Léo preparando comida de verdade em casa" width="950" height="1425" />
+            <img loading="lazy" src="/images/1785530329200_image.png" alt="Eu preparando comida de verdade em casa" width="950" height="1425" />
             <span>COMIDA QUE CONSTRÓI</span>
           </div>
           <div className="solution-copy">
@@ -309,7 +316,7 @@ export default function Home() {
             <h2>Comece hoje a voltar para a sua <em>melhor versão.</em></h2>
             <ul>
               <li><CheckIcon /> 7 módulos completos</li>
-              <li><CheckIcon /> Consultoria personalizada com treino e dieta montados pelo Léo</li>
+              <li><CheckIcon /> Consultoria personalizada com treino e dieta montados por mim</li>
               <li><CheckIcon /> Todos os bônus incluídos</li>
               <li><CheckIcon /> Acesso imediato e vitalício</li>
             </ul>
@@ -361,7 +368,7 @@ export default function Home() {
             <CTA>Quero começar o Back to Nature</CTA>
             <small>R$97 • acesso vitalício • 7 dias de garantia</small>
           </div>
-          <div className="final-photo"><img loading="lazy" src="/images/1785530373363_image.png" alt="Léo Frota em sua forma atual" width="950" height="1268" /><span>LOOK GOOD.<br />FEEL GOOD.</span></div>
+          <div className="final-photo"><img loading="lazy" src="/images/1785530373363_image.png" alt="Eu na minha forma atual" width="950" height="1268" /><span>LOOK GOOD.<br />FEEL GOOD.</span></div>
         </div>
       </section>
 
