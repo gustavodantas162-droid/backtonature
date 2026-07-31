@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const CHECKOUT_HREF = "#checkout"; // Troque pela URL final do checkout quando estiver disponível.
+const CHECKOUT_HREF = "https://pay.kiwify.com.br/cI4acSj";
 
 const foods = [
   {
@@ -53,6 +53,7 @@ const modules = [
 ];
 
 const bonuses = [
+  "Consultoria personalizada com o Léo, com treino e dieta montados para você",
   "Guia prático para montar seu prato de comida de verdade",
   "Lista de compras Back to Nature",
   "Estratégias para comer bem fora de casa",
@@ -130,7 +131,7 @@ export default function Home() {
       <section className="quick-cta">
         <div className="container quick-cta-inner">
           <p>Se você já se identificou com tudo isso, não precisa esperar. <strong>O método está disponível agora.</strong></p>
-          <CTA>Quero recuperar minha energia — R$197</CTA>
+          <CTA>Quero recuperar minha energia — R$97</CTA>
         </div>
       </section>
 
@@ -257,14 +258,15 @@ export default function Home() {
             <h2>Comece hoje a voltar para a sua <em>melhor versão.</em></h2>
             <ul>
               <li><CheckIcon /> 7 módulos completos</li>
+              <li><CheckIcon /> Consultoria personalizada com treino e dieta montados pelo Léo</li>
               <li><CheckIcon /> Todos os bônus incluídos</li>
               <li><CheckIcon /> Acesso imediato e vitalício</li>
             </ul>
           </div>
           <div className="price-card">
-            <span className="price-label">PROTOCOLO COMPLETO</span>
+            <span className="price-label">PREÇO ESPECIAL DE LANÇAMENTO</span>
             <p className="old-price">De <s>R$397</s> por apenas:</p>
-            <div className="price"><small>R$</small><strong>197</strong><span>pagamento<br />único</span></div>
+            <div className="price"><small>R$</small><strong>97</strong><span>pagamento<br />único</span></div>
             <CTA>Quero meu acesso agora</CTA>
             <p className="payment-note">Cartão em até 12x, PIX ou boleto</p>
             <div className="secure-note"><CheckIcon /><span><strong>Acesso imediato</strong> após a confirmação do pagamento</span></div>
@@ -306,7 +308,7 @@ export default function Home() {
             <h2>Você pode continuar sentindo o que sente hoje — <em>ou pode dar o primeiro passo agora.</em></h2>
             <p>Enquanto está aqui. Enquanto a decisão ainda está clara.</p>
             <CTA>Quero começar o Back to Nature</CTA>
-            <small>R$197 • acesso vitalício • 7 dias de garantia</small>
+            <small>R$97 • acesso vitalício • 7 dias de garantia</small>
           </div>
           <div className="final-photo"><img loading="lazy" src="/images/1785530373363_image.png" alt="Léo Frota em sua forma atual" width="950" height="1268" /><span>LOOK GOOD.<br />FEEL GOOD.</span></div>
         </div>
@@ -317,7 +319,7 @@ export default function Home() {
         <p className="disclaimer container">Este produto oferece conteúdo educacional sobre alimentação e estilo de vida. Não substitui avaliação, diagnóstico ou acompanhamento médico ou nutricional individual. Resultados variam de pessoa para pessoa.</p>
       </footer>
 
-      <a className="mobile-cta" href={CHECKOUT_HREF}><span>COMEÇAR AGORA</span><strong>R$197</strong></a>
+      <a className="mobile-cta" href={CHECKOUT_HREF}><span>COMEÇAR AGORA</span><strong>R$97</strong></a>
     </main>
   );
 }
