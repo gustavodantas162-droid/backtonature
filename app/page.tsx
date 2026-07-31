@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const CHECKOUT_HREF = "https://pay.kiwify.com.br/cI4acSj";
 
@@ -40,6 +40,13 @@ const foods = [
     title: "Vida real, todos os dias",
     text: "Variedade, cor e autonomia para montar sua rotina.",
   },
+];
+
+const currentLeoImages = [
+  { image: "/images/1785530326793_image.png", label: "O físico como consequência" },
+  { image: "/images/1785530329200_image.png", label: "Comida de verdade na rotina" },
+  { image: "/images/1785530370386_image.png", label: "Treino com direção" },
+  { image: "/images/1785530373363_image.png", label: "Energia que aparece no corpo" },
 ];
 
 const modules = [
@@ -87,6 +94,14 @@ function CTA({ children, className = "" }: { children: React.ReactNode; classNam
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const moveCarousel = (direction: number) => {
+    carouselRef.current?.scrollBy({
+      left: carouselRef.current.clientWidth * 0.82 * direction,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <main>
@@ -124,6 +139,42 @@ export default function Home() {
               <strong>VOLTE</strong>
               <span>A SENTIR-SE VIVO</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="delivery-section" aria-labelledby="delivery-title">
+        <div className="container">
+          <div className="delivery-heading">
+            <div>
+              <span className="section-number">O QUE VOCÊ RECEBE</span>
+              <h2 id="delivery-title">Não é só um curso.<br /><em>É um plano feito com você.</em></h2>
+            </div>
+            <p>Assim que entrar, você recebe todo o conhecimento do Back to Nature e o acompanhamento direto para transformar esse conhecimento em uma rotina feita para o seu corpo.</p>
+          </div>
+
+          <div className="delivery-grid">
+            <article><span>01</span><h3>Curso completo</h3><p>Os 7 módulos do Método Libertação Ancestral, do fundamento à aplicação.</p></article>
+            <article><span>02</span><h3>Consultoria com o Léo</h3><p>Uma orientação personalizada para entender seu momento, objetivo e rotina.</p></article>
+            <article><span>03</span><h3>Treino personalizado</h3><p>Um treino montado pelo Léo para o seu nível e para onde você quer chegar.</p></article>
+            <article><span>04</span><h3>Dieta personalizada</h3><p>Uma estratégia alimentar montada para você, alinhada ao protocolo e à sua realidade.</p></article>
+            <article><span>05</span><h3>Bônus + acesso vitalício</h3><p>Materiais práticos, futuras atualizações e liberdade para rever quando quiser.</p></article>
+          </div>
+
+          <div className="carousel-header">
+            <div><span className="section-number">BACK TO NATURE NA PRÁTICA</span><h3>O método que o Léo vive todos os dias.</h3></div>
+            <div className="carousel-controls">
+              <button type="button" onClick={() => moveCarousel(-1)} aria-label="Imagem anterior">←</button>
+              <button type="button" onClick={() => moveCarousel(1)} aria-label="Próxima imagem">→</button>
+            </div>
+          </div>
+          <div className="creator-carousel" ref={carouselRef}>
+            {currentLeoImages.map((item, index) => (
+              <figure key={item.image}>
+                <img loading="lazy" src={item.image} alt={`${item.label}, foto ${index + 1} de Léo Frota`} width="950" height="1268" />
+                <figcaption><span>0{index + 1}</span><strong>{item.label}</strong></figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
