@@ -92,7 +92,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Back to Nature — início">
-          <span className="brand-mark">BTN</span>
+          <span className="brand-mark"><img src="/favicon.png" alt="" width="40" height="40" /></span>
           <span>BACK TO NATURE</span>
         </a>
         <span className="header-mantra">EAT GOOD <i /> LOOK GOOD <i /> FEEL GOOD</span>
@@ -315,7 +315,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="container footer-inner"><span className="brand"><span className="brand-mark">BTN</span><span>BACK TO NATURE</span></span><p>© 2026 Léo Frota. Todos os direitos reservados.</p><a href="https://instagram.com/leoxfrota" target="_blank" rel="noreferrer">@leoxfrota</a></div>
+        <div className="container footer-inner"><span className="brand"><span className="brand-mark"><img src="/favicon.png" alt="" width="40" height="40" /></span><span>BACK TO NATURE</span></span><p>© 2026 Léo Frota. Todos os direitos reservados.</p><a href="https://instagram.com/leoxfrota" target="_blank" rel="noreferrer">@leoxfrota</a></div>
         <p className="disclaimer container">Este produto oferece conteúdo educacional sobre alimentação e estilo de vida. Não substitui avaliação, diagnóstico ou acompanhamento médico ou nutricional individual. Resultados variam de pessoa para pessoa.</p>
       </footer>
 
