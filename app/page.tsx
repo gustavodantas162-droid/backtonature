@@ -15,9 +15,9 @@ const foodGallery = [
 ];
 
 const chapters = [
-  { number: "1", title: "A prisão alimentar moderna", text: "Como a indústria influencia suas escolhas", visual: "label" },
-  { number: "2", title: "Desprogramação alimentar", text: "As crenças que precisam ser questionadas", visual: "mind" },
-  { number: "3", title: "Fundamentos da alimentação ancestral", text: "O que realmente comer", image: "/images/1785530347484_image.png" },
+  { number: "1", title: "A prisão alimentar moderna", text: "Como a indústria influencia suas escolhas", image: "/images/chapter-01-modern-food.jpg" },
+  { number: "2", title: "Desprogramação alimentar", text: "As crenças que precisam ser questionadas", image: "/images/chapter-02-desprogramacao.png" },
+  { number: "3", title: "Fundamentos da alimentação ancestral", text: "O que realmente comer", image: "/images/chapter-03-ancestral.png" },
   { number: "4", title: "Montando sua alimentação", text: "Refeições, compras e rotina real", image: "/images/1785530351080_image.png" },
   { number: "5", title: "Alimentação para o shape", text: "Massa, gordura e energia pro treino", image: "/images/1785530370386_image.png" },
   { number: "6", title: "Corpo, saúde e vitalidade", text: "Energia, sono, hormônio e testosterona", image: "/images/1785530326793_image.png" },
@@ -62,37 +62,18 @@ export default function Home() {
 
   return (
     <main id="top">
-      <header className="site-header page-width">
-        <a className="brand" href="#top" aria-label="Back to Nature — início">
-          <span className="brand-box">BTN</span><span>BACK TO NATURE</span>
-        </a>
-        <span className="header-note">EAT GOOD · LOOK GOOD · FEEL GOOD</span>
-        <a className="header-cta" href={CHECKOUT_HREF}>COMEÇAR AGORA</a>
-      </header>
-
       <section className="hero page-width" aria-labelledby="hero-title">
         <div className="hero-copy">
           <span className="kicker">PROTOCOLO BACK TO NATURE</span>
-          <h1 id="hero-title">Se sua energia, sua libido e sua disposição não são mais as mesmas, <em>o problema não é força de vontade.</em></h1>
-          <p>É o que a indústria alimentar te ensinou a comer.</p>
-          <p className="hero-sub">O Protocolo Back to Nature te devolve o que o mundo moderno tirou de você: <strong>saúde, energia e vitalidade</strong> — voltando pra alimentação que seu corpo já sabe reconhecer.</p>
+          <h1 id="hero-title">Recupere sua energia, sua libido e sua disposição.</h1>
+          <p>O problema não é força de vontade.</p>
+          <p className="hero-sub">É o que a indústria te ensinou a comer. O <strong>Back to Nature</strong> te leva de volta à comida que seu corpo reconhece.</p>
           <CTA>Quero recuperar minha energia — R$97</CTA>
           <small>Pagamento único · Acesso imediato · 7 dias de garantia</small>
         </div>
 
         <div className="product-stage" aria-label="Produto Protocolo Back to Nature">
-          <div className="product-orbit orbit-one" aria-hidden="true" />
-          <div className="product-orbit orbit-two" aria-hidden="true" />
-          <div className="product-book">
-            <div className="book-spine"><span>BACK TO NATURE</span></div>
-            <div className="book-cover">
-              <span className="cover-label">PROTOCOLO</span>
-              <img src="/product-back-to-nature.png" alt="Capa do Protocolo Back to Nature" width="128" height="128" />
-              <div><strong>BACK TO</strong><em>NATURE</em></div>
-              <small>CONHECIMENTO · EXECUÇÃO · CONEXÃO</small>
-            </div>
-          </div>
-          <span className="product-caption">ACESSO VITALÍCIO<br />+ ATUALIZAÇÕES</span>
+          <img className="product-cover-image" src="/product-back-to-nature.png" alt="Capa do Protocolo Back to Nature" width="500" height="500" />
         </div>
       </section>
 
@@ -106,9 +87,8 @@ export default function Home() {
         <div className="split-copy">
           <h2 id="problem-title">Não é culpa sua.<br /><em>E não é “coisa da idade”.</em></h2>
           <div className="prose">
-            <p>A indústria alimentar te ensinou a ter medo de <strong>comida natural</strong>, a contar caloria sem olhar qualidade, a substituir refeição de verdade por produto industrializado — e isso afasta seu corpo do que ele reconhece.</p>
-            <p>O resultado: <strong className="accent-text">hormônio desregulado, energia baixa, libido em queda.</strong></p>
-            <p>Ninguém nunca te disse isso. Por isso nenhuma dieta da moda resolveu.</p>
+            <p>Você foi ensinado a temer <strong>comida natural</strong>, contar calorias e trocar refeições por produtos.</p>
+            <p>O resultado: <strong className="accent-text">energia baixa, libido em queda e um corpo que não responde.</strong> Não é idade. É uma base errada.</p>
           </div>
         </div>
       </section>
@@ -138,8 +118,8 @@ export default function Home() {
             <figure><img src="/images/1785530373363_image.png" alt="Léo em sua rotina atual" width="952" height="1269" /><span>AUTONOMIA NA PRÁTICA</span></figure>
           </div>
           <div className="story-copy prose on-dark-prose">
-            <p>Teve uma época em que minha rotina era cerveja de sexta, fast-food de terça e treino “quando dava”. Eu não sabia disso na época, mas cada uma dessas escolhas estava me afastando cada vez mais de como meu corpo funciona de verdade — e eu sentia isso em energia, em disposição, em tudo.</p>
-            <p>O que você vê hoje não veio de suplemento, dieta da moda ou horas trancado numa academia. Veio de <strong>voltar pro básico: comida de verdade, treino direto ao ponto</strong>, e entender o que a indústria queria que eu acreditasse sobre alimentação — pra poder ignorar.</p>
+            <p>Minha rotina era cerveja, fast-food e treino “quando dava”. Eu sentia o preço na energia, na disposição e no corpo.</p>
+            <p>Minha mudança veio de <strong>comida de verdade e treino direto ao ponto.</strong> Sem dieta da moda. Sem complicação.</p>
             <p className="impact-line">Esse protocolo é literalmente o caminho que eu segui.</p>
             <CTA light>Quero o mesmo caminho — R$97</CTA>
           </div>
@@ -151,8 +131,8 @@ export default function Home() {
         <div className="split-copy food-intro">
           <h2 id="food-title">O que vem da terra e do animal. <em>Não do laboratório.</em></h2>
           <div className="prose">
-            <p><strong>Comida de verdade não tem tabela nutricional de 20 ingredientes</strong> que você não sabe pronunciar.</p>
-            <p>É proteína de qualidade, gordura de verdade, fruta, raiz — o que seu corpo reconhece e sabe processar, sem confundir fome com vontade, sem picos de açúcar escondidos, sem aditivo pensado pra você comer mais do que precisa.</p>
+            <p><strong>Comida de verdade não precisa de 20 ingredientes.</strong></p>
+            <p>É proteína, gordura de verdade, fruta e raiz. Simples, nutritivo e reconhecível.</p>
             <p className="impact-line">Não é sobre contar caloria. É sobre qualidade.</p>
           </div>
         </div>
@@ -176,7 +156,7 @@ export default function Home() {
           <div className="section-index on-dark">04 <span /> A SOLUÇÃO</div>
           <h2 id="solution-title">Não é mais uma dieta. <em>É o caminho de volta.</em></h2>
           <div className="prose on-dark-prose">
-            <p>O <strong>Protocolo Back to Nature</strong> existe pra romper esse ciclo — não te dando mais uma regra pra seguir, mas te devolvendo o entendimento de como comer de verdade, treinar direito e recuperar a energia, a libido e a disposição que a indústria alimentar foi lentamente tirando de você.</p>
+            <p>O <strong>Back to Nature</strong> te ensina a comer de verdade, treinar direito e recuperar energia, libido e disposição.</p>
           </div>
           <div className="method-steps">
             <article><span>01</span><div><h3>Desprogramar</h3><p>Entender as crenças e os hábitos modernos que controlam sua alimentação sem você perceber.</p></div></article>
@@ -202,10 +182,8 @@ export default function Home() {
         <div className="chapters-carousel" ref={chaptersRef} aria-label="Os sete capítulos do método">
           {chapters.map((chapter) => (
             <article className="chapter-card" key={chapter.number}>
-              <div className={`chapter-visual ${chapter.visual ? `visual-${chapter.visual}` : ""}`}>
-                {chapter.image ? <img loading="lazy" src={chapter.image} alt="" width="952" height="1269" /> : null}
-                {chapter.visual === "label" ? <div className="editorial-visual"><span>RÓTULO</span><strong>20</strong><small>ingredientes?</small></div> : null}
-                {chapter.visual === "mind" ? <div className="editorial-visual mind-visual"><span>RE</span><strong>PRO<br />GRA<br />ME</strong></div> : null}
+              <div className="chapter-visual">
+                <img loading="lazy" src={chapter.image} alt="" width="952" height="1269" />
                 <span className="chapter-tag">{chapter.number} CAPÍTULO</span>
               </div>
               <div className="chapter-copy"><h3>{chapter.title}</h3><p>{chapter.text}</p></div>
@@ -215,9 +193,9 @@ export default function Home() {
         <p className="update-note">(Contém atualização periódica de conteúdo)</p>
 
         <div className="ecosystem-grid">
-          <article><span className="card-number">01</span><p className="card-kicker">CONHECIMENTO</p><h3>O Método Libertação Ancestral</h3><p>Desprogramar → Reaproximar → Reconstruir, em 7 partes diretas ao ponto.</p></article>
-          <article><span className="card-number">02</span><p className="card-kicker">EXECUÇÃO</p><h3>Sua IA personalizada</h3><p>Depois de analisar seu perfil e sua rotina, a IA monta um plano completo e individual pra você aplicar o que aprendeu — sem ficar perdido tentando adaptar sozinho.</p></article>
-          <article><span className="card-number">03</span><p className="card-kicker">CONEXÃO</p><h3>Comunidade Back to Nature</h3><p>Acesso à comunidade de quem também está voltando ao básico — pra trocar conhecimento, aprender coisas novas e se conectar com quem já saiu das amarras do sistema alimentar moderno.</p></article>
+          <article><span className="card-number">01</span><p className="card-kicker">CONHECIMENTO</p><h3>O Método Back to Nature</h3><p>Desprogramar → Reaproximar → Reconstruir, em 7 partes diretas ao ponto.</p></article>
+          <article><span className="card-number">02</span><p className="card-kicker">EXECUÇÃO</p><h3>Sua IA personalizada</h3><p>Um plano individual baseado no seu perfil e na sua rotina.</p></article>
+          <article><span className="card-number">03</span><p className="card-kicker">CONEXÃO</p><h3>Comunidade Back to Nature</h3><p>Troque conhecimento e evolua com quem também voltou ao básico.</p></article>
         </div>
 
         <div className="bonus-panel">
@@ -230,7 +208,7 @@ export default function Home() {
         <div className="offer-copy">
           <div className="section-index on-dark">06 <span /> PREÇO DE LANÇAMENTO</div>
           <h2 id="offer-title">Comece agora a construir sua vida <em>Back to Nature.</em></h2>
-          <p>Acesso completo ao ecossistema: os 7 capítulos do método, sua IA personalizada, a comunidade Back to Nature e todos os bônus — <strong>liberado na hora.</strong></p>
+          <p>7 capítulos, IA personalizada, comunidade e bônus. <strong>Tudo liberado na hora.</strong></p>
           <ul>
             <li><span>•</span><strong>Acesso vitalício</strong></li>
             <li><span>•</span><strong>Atualizações periódicas</strong></li>

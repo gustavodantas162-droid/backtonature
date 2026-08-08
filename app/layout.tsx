@@ -6,9 +6,9 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://backtonature-red.vercel.app"),
+  metadataBase: new URL("https://backtonaturebtn.vercel.app"),
   title: "Protocolo Back to Nature | Léo Frota",
-  description: "O Método Libertação Ancestral para recuperar autonomia, energia e disposição com comida de verdade.",
+  description: "Recupere autonomia, energia e disposição com o método Back to Nature.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     description: "Volte ao básico. Recupere sua vitalidade.",
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "/og.png", width: 1728, height: 896, alt: "Protocolo Back to Nature" }],
+    images: [{ url: "/product-back-to-nature.png", width: 500, height: 500, alt: "Capa do Protocolo Back to Nature" }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Protocolo Back to Nature",
     description: "Volte ao básico. Recupere sua vitalidade.",
-    images: ["/og.png"],
+    images: ["/product-back-to-nature.png"],
   },
 };
 
