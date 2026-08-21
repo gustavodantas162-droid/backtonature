@@ -7,25 +7,25 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://backtonaturebtn.vercel.app"),
-  title: "Protocolo Back to Nature | Léo Frota",
-  description: "Recupere autonomia, energia e disposição com o método Back to Nature.",
+  title: "Plano Selva | Entenda. Sinta. Construa.",
+  description: "Uma nova forma de recuperar autonomia, energia e disposição com comida de verdade.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Protocolo Back to Nature",
-    description: "Volte ao básico. Recupere sua vitalidade.",
+    title: "Plano Selva",
+    description: "Entenda. Sinta. Construa.",
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "/product-back-to-nature.png", width: 500, height: 500, alt: "Capa do Protocolo Back to Nature" }],
+    images: [{ url: "/plano-selva-cover.png", width: 941, height: 1672, alt: "Capa do Plano Selva" }],
   },
   twitter: {
     card: "summary",
-    title: "Protocolo Back to Nature",
-    description: "Volte ao básico. Recupere sua vitalidade.",
-    images: ["/product-back-to-nature.png"],
+    title: "Plano Selva",
+    description: "Entenda. Sinta. Construa.",
+    images: ["/plano-selva-cover.png"],
   },
 };
 

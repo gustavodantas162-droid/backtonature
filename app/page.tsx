@@ -2,13 +2,13 @@
 
 import { useRef, useState } from "react";
 
-const CHECKOUT_HREF = "https://pay.kiwify.com.br/cI4acSj";
+const CHECKOUT_HREF = "#oferta";
 
 const foodGallery = [
-  { image: "/images/1785530347484_image.png", title: "Proteína de verdade", text: "Ovos + carne vermelha: densidade nutricional que sustenta energia e vitalidade." },
-  { image: "/images/1785530351080_image.png", title: "Refeição completa", text: "Comida reconhecível, simples e sem uma lista interminável de ingredientes." },
-  { image: "/images/1785530338310_image.png", title: "O simples funciona", text: "Ovos: alimento prático, versátil e naturalmente nutritivo." },
-  { image: "/images/1785530342591_image.png", title: "Minerais da natureza", text: "Ostras com limão: comida real e naturalmente rica em micronutrientes." },
+  { image: "/images/selva-food-04.jpg", title: "Comida da selva", text: "Carne, raízes e frutas: uma base simples, forte e reconhecível." },
+  { image: "/images/selva-food-02.jpg", title: "Proteína de verdade", text: "Ovos e carne: densidade nutricional para sustentar energia e vitalidade." },
+  { image: "/images/selva-food-01.jpg", title: "Alimento por inteiro", text: "Comida de verdade, sem uma lista interminável de ingredientes." },
+  { image: "/images/selva-food-03.jpg", title: "Da terra para o prato", text: "Ingredientes simples que ainda parecem comida." },
   { image: "/images/1785530340559_image.png", title: "Snack ancestral", text: "Tâmaras, manteiga e sal no lugar de mais um ultraprocessado." },
   { image: "/images/1785530345622_image.png", title: "Energia da terra", text: "Frutas como fonte natural de sabor, variedade e energia." },
   { image: "/images/1785530355245_image.png", title: "Rotina possível", text: "Comida de verdade também cabe nos dias corridos." },
@@ -18,10 +18,10 @@ const chapters = [
   { number: "1", title: "A prisão alimentar moderna", text: "Como a indústria influencia suas escolhas", image: "/images/chapter-01-modern-food.jpg" },
   { number: "2", title: "Desprogramação alimentar", text: "As crenças que precisam ser questionadas", image: "/images/chapter-02-desprogramacao.png" },
   { number: "3", title: "Fundamentos da alimentação ancestral", text: "O que realmente comer", image: "/images/chapter-03-ancestral.png" },
-  { number: "4", title: "Montando sua alimentação", text: "Refeições, compras e rotina real", image: "/images/1785530351080_image.png" },
-  { number: "5", title: "Alimentação para o shape", text: "Massa, gordura e energia pro treino", image: "/images/1785530370386_image.png" },
-  { number: "6", title: "Corpo, saúde e vitalidade", text: "Energia, sono, hormônio e testosterona", image: "/images/1785530326793_image.png" },
-  { number: "7", title: "Sua vida Back to Nature", text: "Transição, autonomia e longo prazo", image: "/images/1785530329200_image.png" },
+  { number: "4", title: "Montando sua alimentação", text: "Refeições, compras e rotina real", image: "/images/selva-food-04.jpg" },
+  { number: "5", title: "Alimentação para o shape", text: "Massa, gordura e energia pro treino", image: "/images/selva-food-02.jpg" },
+  { number: "6", title: "Corpo, saúde e vitalidade", text: "Energia, sono, hormônio e vitalidade", image: "/images/expert-after-01.jpg" },
+  { number: "7", title: "Sua vida Plano Selva", text: "Transição, autonomia e longo prazo", image: "/images/selva-food-01.jpg" },
 ];
 
 const bonuses = [
@@ -64,22 +64,22 @@ export default function Home() {
     <main id="top">
       <section className="hero page-width" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <span className="kicker">PROTOCOLO BACK TO NATURE</span>
+          <span className="kicker">PLANO SELVA</span>
           <h1 id="hero-title">Recupere sua energia, sua libido e sua disposição.</h1>
           <p>O problema não é força de vontade.</p>
-          <p className="hero-sub">É o que a indústria te ensinou a comer. O <strong>Back to Nature</strong> te leva de volta à comida que seu corpo reconhece.</p>
-          <CTA>Quero recuperar minha energia — R$97</CTA>
-          <small>Pagamento único · Acesso imediato · 7 dias de garantia</small>
+          <p className="hero-sub">É o que a indústria te ensinou a comer. O <strong>Plano Selva</strong> te leva de volta à comida que seu corpo reconhece.</p>
+          <CTA>Quero conhecer o Plano Selva</CTA>
+          <small>Novos detalhes e checkout em breve</small>
         </div>
 
-        <div className="product-stage" aria-label="Produto Protocolo Back to Nature">
-          <img className="product-cover-image" src="/product-back-to-nature.png" alt="Capa do Protocolo Back to Nature" width="500" height="500" />
+        <div className="product-stage" aria-label="Produto Plano Selva">
+          <img className="product-cover-image" src="/plano-selva-cover.png" alt="Capa do Plano Selva" width="941" height="1672" />
         </div>
       </section>
 
       <section className="instant-cta page-width">
-        <p>Se você já se identificou com tudo isso, não precisa esperar — <strong>o método está disponível agora.</strong></p>
-        <CTA light>Quero começar agora — R$97</CTA>
+        <p>Se você já se identificou com tudo isso, <strong>o Plano Selva está sendo preparado.</strong></p>
+        <CTA light>Quero conhecer o Plano Selva</CTA>
       </section>
 
       <section className="section problem-section page-width" aria-labelledby="problem-title">
@@ -95,33 +95,33 @@ export default function Home() {
 
       <section className="dark-panel transformation page-width" aria-labelledby="story-title">
         <div className="panel-heading">
-          <div className="section-index on-dark">02 <span /> A TRANSFORMAÇÃO DO LÉO</div>
-          <h2 id="story-title">Eu não nasci assim.</h2>
-          <p>Não é teoria — <strong>é o que funcionou comigo primeiro.</strong></p>
+          <div className="section-index on-dark">02 <span /> ANTES DO PLANO SELVA</div>
+          <h2 id="story-title">A aparência real estava ofuscada.</h2>
+          <p>Antes da mudança, <strong>a alimentação convencional escondia o potencial do corpo.</strong></p>
         </div>
 
         <div className="before-after">
           <figure>
-            <div className="photo-frame"><img src="/images/1785530233131_image.png" alt="Léo antes da mudança de estilo de vida" width="952" height="1269" /></div>
-            <figcaption><span>ANTES</span><strong>Distante de como meu corpo funciona</strong></figcaption>
+            <div className="photo-frame"><img src="/images/expert-before-01.jpg" alt="Novo expert antes da Dieta da Selva" width="1200" height="1600" /></div>
+            <figcaption><span>ANTES</span><strong>O corpo sob a alimentação convencional</strong></figcaption>
           </figure>
           <span className="versus" aria-hidden="true">→</span>
           <figure>
-            <div className="photo-frame"><img src="/images/1785530326793_image.png" alt="Léo após aplicar o Back to Nature" width="952" height="1269" /></div>
-            <figcaption><span>DEPOIS</span><strong>Energia que aparece no corpo</strong></figcaption>
+            <div className="photo-frame"><img src="/images/expert-after-01.jpg" alt="Novo expert depois da Dieta da Selva" width="738" height="1600" /></div>
+            <figcaption><span>DEPOIS</span><strong>A aparência real começa a aparecer</strong></figcaption>
           </figure>
         </div>
 
         <div className="story-grid">
           <div className="alt-comparison">
-            <figure><img src="/images/1785530315808_image.png" alt="Léo em sua antiga rotina com fast-food" width="510" height="640" /><span>FAST-FOOD DE TERÇA</span></figure>
-            <figure><img src="/images/1785530373363_image.png" alt="Léo em sua rotina atual" width="952" height="1269" /><span>AUTONOMIA NA PRÁTICA</span></figure>
+            <figure><img src="/images/expert-before-02.jpg" alt="Novo expert antes da mudança alimentar" width="1058" height="1600" /><span>ANTES DA DIETA DA SELVA</span></figure>
+            <figure><img src="/images/expert-after-02.jpg" alt="Novo expert após a mudança alimentar" width="738" height="1600" /><span>DEPOIS DA MUDANÇA</span></figure>
           </div>
           <div className="story-copy prose on-dark-prose">
-            <p>Minha rotina era cerveja, fast-food e treino “quando dava”. Eu sentia o preço na energia, na disposição e no corpo.</p>
-            <p>Minha mudança veio de <strong>comida de verdade e treino direto ao ponto.</strong> Sem dieta da moda. Sem complicação.</p>
-            <p className="impact-line">Esse protocolo é literalmente o caminho que eu segui.</p>
-            <CTA light>Quero o mesmo caminho — R$97</CTA>
+            <p>Os alimentos convencionais que empurraram pra ele durante anos deixavam o corpo sem responder e ofuscavam a aparência que ele realmente podia construir.</p>
+            <p>A virada começou ao trocar essa base por <strong>comida de verdade e uma rotina coerente.</strong> Sem dieta da moda. Sem complicação.</p>
+            <p className="impact-line">O Plano Selva organiza esse caminho.</p>
+            <CTA light>Quero conhecer o Plano Selva</CTA>
           </div>
         </div>
       </section>
@@ -149,14 +149,14 @@ export default function Home() {
 
       <section className="solution-section page-width" aria-labelledby="solution-title">
         <div className="solution-photo">
-          <img loading="lazy" src="/images/1785530329200_image.png" alt="Léo preparando comida de verdade" width="826" height="1456" />
+          <img loading="lazy" src="/images/selva-food-04.jpg" alt="Prato de comida de verdade do novo expert" width="738" height="1600" />
           <span>COMIDA REAL. VIDA REAL.</span>
         </div>
         <div className="solution-copy">
           <div className="section-index on-dark">04 <span /> A SOLUÇÃO</div>
           <h2 id="solution-title">Não é mais uma dieta. <em>É o caminho de volta.</em></h2>
           <div className="prose on-dark-prose">
-            <p>O <strong>Back to Nature</strong> te ensina a comer de verdade, treinar direito e recuperar energia, libido e disposição.</p>
+            <p>O <strong>Plano Selva</strong> te ensina a comer de verdade, treinar direito e recuperar energia, libido e disposição.</p>
           </div>
           <div className="method-steps">
             <article><span>01</span><div><h3>Desprogramar</h3><p>Entender as crenças e os hábitos modernos que controlam sua alimentação sem você perceber.</p></div></article>
@@ -193,9 +193,9 @@ export default function Home() {
         <p className="update-note">(Contém atualização periódica de conteúdo)</p>
 
         <div className="ecosystem-grid">
-          <article><span className="card-number">01</span><p className="card-kicker">CONHECIMENTO</p><h3>O Método Back to Nature</h3><p>Desprogramar → Reaproximar → Reconstruir, em 7 partes diretas ao ponto.</p></article>
+          <article><span className="card-number">01</span><p className="card-kicker">CONHECIMENTO</p><h3>O Método Plano Selva</h3><p>Entenda → Sinta → Construa, em 7 partes diretas ao ponto.</p></article>
           <article><span className="card-number">02</span><p className="card-kicker">EXECUÇÃO</p><h3>Sua IA personalizada</h3><p>Um plano individual baseado no seu perfil e na sua rotina.</p></article>
-          <article><span className="card-number">03</span><p className="card-kicker">CONEXÃO</p><h3>Comunidade Back to Nature</h3><p>Troque conhecimento e evolua com quem também voltou ao básico.</p></article>
+          <article><span className="card-number">03</span><p className="card-kicker">CONEXÃO</p><h3>Comunidade Plano Selva</h3><p>Troque conhecimento e evolua com quem também voltou ao básico.</p></article>
         </div>
 
         <div className="bonus-panel">
@@ -207,8 +207,8 @@ export default function Home() {
       <section className="offer-section page-width" id="oferta" aria-labelledby="offer-title">
         <div className="offer-copy">
           <div className="section-index on-dark">06 <span /> PREÇO DE LANÇAMENTO</div>
-          <h2 id="offer-title">Comece agora a construir sua vida <em>Back to Nature.</em></h2>
-          <p>7 capítulos, IA personalizada, comunidade e bônus. <strong>Tudo liberado na hora.</strong></p>
+          <h2 id="offer-title">Prepare-se para construir sua vida com o <em>Plano Selva.</em></h2>
+          <p>A estrutura completa do novo produto será apresentada aqui. <strong>Checkout em breve.</strong></p>
           <ul>
             <li><span>•</span><strong>Acesso vitalício</strong></li>
             <li><span>•</span><strong>Atualizações periódicas</strong></li>
@@ -216,11 +216,11 @@ export default function Home() {
           </ul>
         </div>
         <div className="price-card">
-          <span>OFERTA DE LANÇAMENTO</span>
-          <p>De <s>R$397</s> por apenas</p>
-          <div className="price"><small>R$</small><strong>97</strong></div>
-          <CTA light>Quero começar agora — R$97</CTA>
-          <p className="price-note">Pagamento único · Acesso imediato</p>
+          <span>NOVO PRODUTO</span>
+          <p>Informações de lançamento</p>
+          <div className="price"><strong>EM BREVE</strong></div>
+          <CTA light>Quero conhecer o Plano Selva</CTA>
+          <p className="price-note">Checkout será inserido na próxima atualização</p>
         </div>
       </section>
 
@@ -257,20 +257,20 @@ export default function Home() {
         <div className="final-copy">
           <div className="section-index on-dark">09 <span /> SUA DECISÃO</div>
           <h2 id="final-title">Você pode continuar sentindo o que sente hoje — <em>ou pode dar o primeiro passo agora.</em></h2>
-          <CTA light>Quero recuperar minha energia — R$97</CTA>
-          <small>Pagamento único · Acesso imediato · Garantia de 7 dias</small>
+          <CTA light>Quero conhecer o Plano Selva</CTA>
+          <small>Novos detalhes e checkout em breve</small>
         </div>
-        <div className="final-photo"><img loading="lazy" src="/images/1785530370386_image.png" alt="Léo treinando com halteres" width="840" height="1455" /><span>VOLTE<br />AO BÁSICO.</span></div>
+        <div className="final-photo"><img loading="lazy" src="/images/expert-after-01.jpg" alt="Novo expert após a mudança alimentar" width="738" height="1600" /><span>VOLTE<br />À SELVA.</span></div>
       </section>
 
       <footer className="site-footer page-width">
-        <a className="brand footer-brand" href="#top"><span className="brand-box">BTN</span><span>BACK TO NATURE</span></a>
-        <p>© {new Date().getFullYear()} Back to Nature. Todos os direitos reservados.</p>
+        <a className="brand footer-brand" href="#top"><span className="brand-box">PS</span><span>PLANO SELVA</span></a>
+        <p>© {new Date().getFullYear()} Plano Selva. Todos os direitos reservados.</p>
         <a href="#top">VOLTAR AO TOPO ↑</a>
         <small>Este produto oferece conteúdo educacional. Resultados variam conforme contexto, rotina e aplicação individual.</small>
       </footer>
 
-      <a className="mobile-cta" href={CHECKOUT_HREF}><span>QUERO COMEÇAR</span><strong>R$97 ↗</strong></a>
+      <a className="mobile-cta" href={CHECKOUT_HREF}><span>CONHECER O PLANO</span><strong>EM BREVE ↗</strong></a>
     </main>
   );
 }
