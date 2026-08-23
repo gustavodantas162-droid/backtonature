@@ -211,19 +211,21 @@ export default function Home() {
         <div className="offer-copy">
           <div className="section-index on-dark">06 <span /> PREÇO DE LANÇAMENTO</div>
           <h2 id="offer-title">Prepare-se para construir sua vida com o <em>Plano Selva.</em></h2>
-          <p>A estrutura completa do novo produto será apresentada aqui. <strong>Checkout em breve.</strong></p>
+          <p>Uma estrutura completa para transformar conhecimento em rotina. <strong>Você recebe tudo desde o primeiro acesso:</strong></p>
           <ul>
-            <li><span>•</span><strong>Acesso vitalício</strong></li>
-            <li><span>•</span><strong>Atualizações periódicas</strong></li>
-            <li><span>•</span><strong>Garantia incondicional de 7 dias</strong></li>
+            <li><span>•</span><strong>Acesso ao Plano Selva com mais de 7 módulos de conteúdo</strong></li>
+            <li><span>•</span><strong>Acesso ao Desafio de 21 Dias da Selva</strong></li>
+            <li><span>•</span><strong>Acesso vitalício à área de membros</strong></li>
+            <li><span>•</span><strong>Acesso à Comunidade Selva</strong></li>
+            <li><span>•</span><strong>Atualizações constantes</strong></li>
           </ul>
         </div>
         <div className="price-card">
-          <span>NOVO PRODUTO</span>
-          <p>Informações de lançamento</p>
-          <div className="price"><strong>EM BREVE</strong></div>
+          <span>OFERTA DE LANÇAMENTO</span>
+          <p>Tudo isso por apenas</p>
+          <div className="price"><small>R$</small><strong>47,90</strong></div>
           <CTA light>Quero conhecer o Plano Selva</CTA>
-          <p className="price-note">Checkout será inserido na próxima atualização</p>
+          <p className="price-note">Acesso vitalício + atualizações constantes</p>
         </div>
       </section>
 
@@ -273,7 +275,7 @@ export default function Home() {
         <small>Este produto oferece conteúdo educacional. Resultados variam conforme contexto, rotina e aplicação individual.</small>
       </footer>
 
-      <a className="mobile-cta" href={CHECKOUT_HREF}><span>CONHECER O PLANO</span><strong>EM BREVE ↗</strong></a>
+      <a className="mobile-cta" href={CHECKOUT_HREF}><span>CONHECER O PLANO</span><strong>R$ 47,90 ↗</strong></a>
     </main>
   );
 }
