@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-const CHECKOUT_HREF = "#oferta";
+const CHECKOUT_HREF = "https://pay.cakto.com.br/36xkx9j_1059298";
 
 const foodGallery = [
   { image: "/images/selva-food-04.jpg", title: "Comida da selva", text: "Carne, raízes e frutas: uma base simples, forte e reconhecível." },
@@ -25,16 +25,6 @@ const chapters = [
   { number: "8", tag: "MAPA", title: "Mapa da energia natural", text: "Frutas, mel e raízes para fome, treino e rotina", image: "/images/material-mapa-energia.png" },
   { number: "9", tag: "GUIA", title: "Plano Selva na prática", text: "Observe, experimente, perceba e ajuste", image: "/images/material-plano-pratica.png" },
   { number: "10", tag: "COMUNIDADE", title: "Team Selva", text: "Dicas, missões e aprendizado coletivo", image: "/images/material-team-selva.png" },
-];
-
-const bonuses = [
-  "Lista de compras Eat Good",
-  "Guia de restaurante",
-  "Cardápios prontos",
-  "Exercícios substitutos",
-  "Checklist semanal",
-  "Planner de hábitos",
-  "Diário de treino",
 ];
 
 const faqs = [
@@ -71,18 +61,12 @@ export default function Home() {
           <h1 id="hero-title">Recupere sua energia, sua libido e sua disposição.</h1>
           <p>O problema não é força de vontade.</p>
           <p className="hero-sub">É o que a indústria te ensinou a comer. O <strong>Plano Selva</strong> te leva de volta à comida que seu corpo reconhece.</p>
-          <CTA>Quero conhecer o Plano Selva</CTA>
-          <small>Novos detalhes e checkout em breve</small>
+          <CTA>Quero entrar no Plano Selva</CTA>
         </div>
 
         <div className="product-stage" aria-label="Ryan no Plano Selva">
           <img className="product-cover-image" src="/images/ryan-plano-selva-hero.png" alt="Ryan apresentando o Plano Selva" width="1254" height="1254" />
         </div>
-      </section>
-
-      <section className="instant-cta page-width">
-        <p>Se você já se identificou com tudo isso, <strong>o Plano Selva está sendo preparado.</strong></p>
-        <CTA light>Quero conhecer o Plano Selva</CTA>
       </section>
 
       <section className="section problem-section page-width" aria-labelledby="problem-title">
@@ -99,7 +83,7 @@ export default function Home() {
       <section className="dark-panel transformation page-width" aria-labelledby="story-title">
         <div className="panel-heading">
           <div className="section-index on-dark">02 <span /> ANTES DO PLANO SELVA</div>
-          <h2 id="story-title">A aparência real estava ofuscada.</h2>
+          <h2 id="story-title">O corpo mudou quando a alimentação mudou.</h2>
           <p>Antes da mudança, <strong>a alimentação convencional escondia o potencial do corpo.</strong></p>
         </div>
 
@@ -124,7 +108,7 @@ export default function Home() {
             <p>Os alimentos convencionais que empurraram pra ele durante anos deixavam o corpo sem responder e ofuscavam a aparência que ele realmente podia construir.</p>
             <p>A virada começou ao trocar essa base por <strong>comida de verdade e uma rotina coerente.</strong> Sem dieta da moda. Sem complicação.</p>
             <p className="impact-line">O Plano Selva organiza esse caminho.</p>
-            <CTA light>Quero conhecer o Plano Selva</CTA>
+            <CTA light>Quero entrar no Plano Selva</CTA>
           </div>
         </div>
       </section>
@@ -157,7 +141,7 @@ export default function Home() {
         </div>
         <div className="solution-copy">
           <div className="section-index on-dark">04 <span /> A SOLUÇÃO</div>
-          <h2 id="solution-title">Não é mais uma dieta. <em>É o caminho de volta.</em></h2>
+          <h2 id="solution-title">Um método simples para <em>voltar a comer de verdade.</em></h2>
           <div className="prose on-dark-prose">
             <p>O <strong>Plano Selva</strong> te ensina a comer de verdade, treinar direito e recuperar energia, libido e disposição.</p>
           </div>
@@ -174,7 +158,7 @@ export default function Home() {
         <div className="curriculum-heading">
           <div>
             <div className="section-index">05 <span /> O QUE VOCÊ RECEBE</div>
-            <h2 id="curriculum-title">O ecossistema completo: <em>Conhecimento + Execução + Conexão.</em></h2>
+            <h2 id="curriculum-title">Tudo o que você recebe <em>no Plano Selva.</em></h2>
           </div>
           <div className="carousel-controls">
             <button type="button" onClick={() => moveChapters(-1)} aria-label="Item anterior">←</button>
@@ -195,23 +179,13 @@ export default function Home() {
         </div>
         <p className="update-note">(Contém atualização periódica de conteúdo)</p>
 
-        <div className="ecosystem-grid">
-          <article><span className="card-number">01</span><p className="card-kicker">CONHECIMENTO</p><h3>O Método Plano Selva</h3><p>Entenda → Sinta → Construa, em 7 partes diretas ao ponto.</p></article>
-          <article><span className="card-number">02</span><p className="card-kicker">EXECUÇÃO</p><h3>Sua IA personalizada</h3><p>Um plano individual baseado no seu perfil e na sua rotina.</p></article>
-          <article><span className="card-number">03</span><p className="card-kicker">CONEXÃO</p><h3>Comunidade Plano Selva</h3><p>Troque conhecimento e evolua com quem também voltou ao básico.</p></article>
-        </div>
-
-        <div className="bonus-panel">
-          <div><span className="bonus-label">INCLUÍDOS</span><h3>Bônus para transformar conhecimento em rotina.</h3></div>
-          <ul>{bonuses.map((bonus) => <li key={bonus}><span aria-hidden="true">•</span><strong>{bonus}</strong></li>)}</ul>
-        </div>
       </section>
 
       <section className="offer-section page-width" id="oferta" aria-labelledby="offer-title">
         <div className="offer-copy">
           <div className="section-index on-dark">06 <span /> PREÇO DE LANÇAMENTO</div>
-          <h2 id="offer-title">Prepare-se para construir sua vida com o <em>Plano Selva.</em></h2>
-          <p>Uma estrutura completa para transformar conhecimento em rotina. <strong>Você recebe tudo desde o primeiro acesso:</strong></p>
+          <h2 id="offer-title">Entre no <em>Plano Selva.</em></h2>
+          <p><strong>Você recebe tudo desde o primeiro acesso:</strong></p>
           <ul>
             <li><span>•</span><strong>Acesso ao Plano Selva com mais de 7 módulos de conteúdo</strong></li>
             <li><span>•</span><strong>Acesso ao Desafio de 21 Dias da Selva</strong></li>
@@ -224,7 +198,7 @@ export default function Home() {
           <span>OFERTA DE LANÇAMENTO</span>
           <p>Tudo isso por apenas</p>
           <div className="price"><small>R$</small><strong>47,90</strong></div>
-          <CTA light>Quero conhecer o Plano Selva</CTA>
+          <CTA light>Quero entrar no Plano Selva</CTA>
           <p className="price-note">Acesso vitalício + atualizações constantes</p>
         </div>
       </section>
@@ -260,10 +234,9 @@ export default function Home() {
 
       <section className="final-section page-width" aria-labelledby="final-title">
         <div className="final-copy">
-          <div className="section-index on-dark">09 <span /> SUA DECISÃO</div>
-          <h2 id="final-title">Você pode continuar sentindo o que sente hoje — <em>ou pode dar o primeiro passo agora.</em></h2>
-          <CTA light>Quero conhecer o Plano Selva</CTA>
-          <small>Novos detalhes e checkout em breve</small>
+          <div className="section-index on-dark">09 <span /> COMECE AGORA</div>
+          <h2 id="final-title">Seu primeiro passo <em>começa aqui.</em></h2>
+          <CTA light>Quero entrar no Plano Selva</CTA>
         </div>
         <div className="final-photo"><img loading="lazy" src="/images/expert-after-01.jpg" alt="Novo expert após a mudança alimentar" width="738" height="1600" /><span>VOLTE<br />À SELVA.</span></div>
       </section>
@@ -275,7 +248,7 @@ export default function Home() {
         <small>Este produto oferece conteúdo educacional. Resultados variam conforme contexto, rotina e aplicação individual.</small>
       </footer>
 
-      <a className="mobile-cta" href={CHECKOUT_HREF}><span>CONHECER O PLANO</span><strong>R$ 47,90 ↗</strong></a>
+      <a className="mobile-cta" href={CHECKOUT_HREF}><span>ENTRAR NO PLANO</span><strong>R$ 47,90 ↗</strong></a>
     </main>
   );
 }
