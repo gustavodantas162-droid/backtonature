@@ -15,13 +15,16 @@ const foodGallery = [
 ];
 
 const chapters = [
-  { number: "1", title: "A prisão alimentar moderna", text: "Como a indústria influencia suas escolhas", image: "/images/chapter-01-modern-food.jpg" },
-  { number: "2", title: "Desprogramação alimentar", text: "As crenças que precisam ser questionadas", image: "/images/chapter-02-desprogramacao.png" },
-  { number: "3", title: "Fundamentos da alimentação ancestral", text: "O que realmente comer", image: "/images/chapter-03-ancestral.png" },
-  { number: "4", title: "Montando sua alimentação", text: "Refeições, compras e rotina real", image: "/images/selva-food-04.jpg" },
-  { number: "5", title: "Alimentação para o shape", text: "Massa, gordura e energia pro treino", image: "/images/selva-food-02.jpg" },
-  { number: "6", title: "Corpo, saúde e vitalidade", text: "Energia, sono, hormônio e vitalidade", image: "/images/expert-after-01.jpg" },
-  { number: "7", title: "Sua vida Plano Selva", text: "Transição, autonomia e longo prazo", image: "/images/selva-food-01.jpg" },
+  { number: "1", tag: "1 MÓDULO", title: "O sistema alimentar", text: "Entenda o sistema antes de voltar ao natural", image: "/images/module-01-sistema-alimentar.png" },
+  { number: "2", tag: "2 MÓDULO", title: "Entendendo a Selva", text: "Recupere o que a alimentação moderna complicou", image: "/images/module-02-entendendo-selva.png" },
+  { number: "3", tag: "3 MÓDULO", title: "A base da alimentação", text: "Conheça os alimentos que sustentam a Selva", image: "/images/module-03-base-alimentacao.png" },
+  { number: "4", tag: "4 MÓDULO", title: "Desenvolvendo a intuição", text: "Fome, saciedade, energia e resposta do corpo", image: "/images/module-04-intuicao.png" },
+  { number: "5", tag: "5 MÓDULO", title: "Construindo sua Selva", text: "Transforme a teoria em uma rotina sustentável", image: "/images/module-05-construindo-selva.png" },
+  { number: "6", tag: "6 MÓDULO", title: "Selva + performance", text: "Alimente o treino e recupere o corpo", image: "/images/module-06-performance.png" },
+  { number: "7", tag: "MAPA", title: "Mapa das proteínas", text: "As principais fontes para montar sua base", image: "/images/material-mapa-proteinas.png" },
+  { number: "8", tag: "MAPA", title: "Mapa da energia natural", text: "Frutas, mel e raízes para fome, treino e rotina", image: "/images/material-mapa-energia.png" },
+  { number: "9", tag: "GUIA", title: "Plano Selva na prática", text: "Observe, experimente, perceba e ajuste", image: "/images/material-plano-pratica.png" },
+  { number: "10", tag: "COMUNIDADE", title: "Team Selva", text: "Dicas, missões e aprendizado coletivo", image: "/images/material-team-selva.png" },
 ];
 
 const bonuses = [
@@ -72,8 +75,8 @@ export default function Home() {
           <small>Novos detalhes e checkout em breve</small>
         </div>
 
-        <div className="product-stage" aria-label="Produto Plano Selva">
-          <img className="product-cover-image" src="/plano-selva-cover.png" alt="Capa do Plano Selva" width="941" height="1672" />
+        <div className="product-stage" aria-label="Ryan no Plano Selva">
+          <img className="product-cover-image" src="/images/ryan-plano-selva-hero.png" alt="Ryan apresentando o Plano Selva" width="1254" height="1254" />
         </div>
       </section>
 
@@ -107,7 +110,7 @@ export default function Home() {
           </figure>
           <span className="versus" aria-hidden="true">→</span>
           <figure>
-            <div className="photo-frame"><img src="/images/expert-after-01.jpg" alt="Novo expert depois da Dieta da Selva" width="738" height="1600" /></div>
+            <div className="photo-frame"><img src="/images/expert-after-main.png" alt="Ryan depois da Dieta da Selva" width="591" height="1280" /></div>
             <figcaption><span>DEPOIS</span><strong>A aparência real começa a aparecer</strong></figcaption>
           </figure>
         </div>
@@ -174,17 +177,17 @@ export default function Home() {
             <h2 id="curriculum-title">O ecossistema completo: <em>Conhecimento + Execução + Conexão.</em></h2>
           </div>
           <div className="carousel-controls">
-            <button type="button" onClick={() => moveChapters(-1)} aria-label="Capítulo anterior">←</button>
-            <button type="button" onClick={() => moveChapters(1)} aria-label="Próximo capítulo">→</button>
+            <button type="button" onClick={() => moveChapters(-1)} aria-label="Item anterior">←</button>
+            <button type="button" onClick={() => moveChapters(1)} aria-label="Próximo item">→</button>
           </div>
         </div>
 
-        <div className="chapters-carousel" ref={chaptersRef} aria-label="Os sete capítulos do método">
+        <div className="chapters-carousel" ref={chaptersRef} aria-label="Módulos e materiais do Plano Selva">
           {chapters.map((chapter) => (
             <article className="chapter-card" key={chapter.number}>
               <div className="chapter-visual">
-                <img loading="lazy" src={chapter.image} alt="" width="952" height="1269" />
-                <span className="chapter-tag">{chapter.number} CAPÍTULO</span>
+                <img loading="lazy" src={chapter.image} alt={`Capa de ${chapter.title}`} width="941" height="1672" />
+                <span className="chapter-tag">{chapter.tag}</span>
               </div>
               <div className="chapter-copy"><h3>{chapter.title}</h3><p>{chapter.text}</p></div>
             </article>
