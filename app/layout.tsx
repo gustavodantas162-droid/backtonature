@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://backtonaturebtn.vercel.app"),
+  metadataBase: new URL("https://planoselva.vercel.app"),
   title: "Plano Selva | Entenda. Sinta. Construa.",
   description: "Uma nova forma de recuperar autonomia, energia e disposição com comida de verdade.",
   icons: {
