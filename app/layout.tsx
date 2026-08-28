@@ -7,25 +7,25 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://planoselva.vercel.app"),
-  title: "Plano Selva | Entenda. Sinta. Construa.",
-  description: "Uma nova forma de recuperar autonomia, energia e disposição com comida de verdade.",
+  title: "Comunidade da Selva | Um grupo para despertados",
+  description: "Esteja em meio a pessoas que saíram do tradicional e decidiram retomar o que a modernidade roubou delas.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Plano Selva",
-    description: "Entenda. Sinta. Construa.",
+    title: "Comunidade da Selva | Um grupo para despertados",
+    description: "Esteja em meio a pessoas que saíram do tradicional e decidiram retomar o que a modernidade roubou delas.",
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "/plano-selva-cover.png", width: 941, height: 1672, alt: "Capa do Plano Selva" }],
+    images: [{ url: "/images/comunidade-selva-cover.png", width: 1254, height: 1254, alt: "Capa da Comunidade da Selva" }],
   },
   twitter: {
     card: "summary",
-    title: "Plano Selva",
-    description: "Entenda. Sinta. Construa.",
-    images: ["/plano-selva-cover.png"],
+    title: "Comunidade da Selva | Um grupo para despertados",
+    description: "Esteja em meio a pessoas que saíram do tradicional e decidiram retomar o que a modernidade roubou delas.",
+    images: ["/images/comunidade-selva-cover.png"],
   },
 };
 

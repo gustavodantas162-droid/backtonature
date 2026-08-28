@@ -12,15 +12,20 @@ test("keeps every sales CTA connected to the Cakto checkout", async () => {
   assert.doesNotMatch(page, /checkout em breve|href="#oferta"/i);
 });
 
-test("uses the restrained Plano Selva visual treatment", async () => {
-  const [page, css] = await Promise.all([
+test("positions the Community as the product and the Plano Selva as a deliverable", async () => {
+  const [page, layout, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /Tudo o que você recebe/);
-  assert.match(page, /R\$ 47,90/);
-  assert.doesNotMatch(page, /Sua IA personalizada|instant-cta|Novos detalhes/i);
+  assert.match(page, /COMUNIDADE DA SELVA/);
+  assert.match(page, /Plano Selva completo/);
+  assert.match(page, /R\$ 47,90 por mês/);
+  assert.match(page, /comunidade-selva-cover\.png/);
+  assert.doesNotMatch(page, /Vitalício|Acesso vitalício|OFERTA DE LANÇAMENTO|PREÇO DE LANÇAMENTO/i);
+  assert.match(layout, /Comunidade da Selva \| Um grupo para despertados/);
+  assert.match(layout, /comunidade-selva-cover\.png/);
   assert.doesNotMatch(css, /jungle-depth|jungle-light|perspective:|translateZ|backdrop-filter/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
 });

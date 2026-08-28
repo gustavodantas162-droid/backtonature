@@ -24,15 +24,16 @@ const chapters = [
   { number: "7", tag: "MAPA", title: "Mapa das proteínas", text: "As principais fontes para montar sua base", image: "/images/material-mapa-proteinas.png" },
   { number: "8", tag: "MAPA", title: "Mapa da energia natural", text: "Frutas, mel e raízes para fome, treino e rotina", image: "/images/material-mapa-energia.png" },
   { number: "9", tag: "GUIA", title: "Plano Selva na prática", text: "Observe, experimente, perceba e ajuste", image: "/images/material-plano-pratica.png" },
-  { number: "10", tag: "COMUNIDADE", title: "Team Selva", text: "Dicas, missões e aprendizado coletivo", image: "/images/material-team-selva.png" },
+  { number: "10", tag: "COMUNIDADE", title: "Comunidade da Selva", text: "Troca, direção e evolução com pessoas que seguem o mesmo caminho.", image: "/images/material-team-selva.png" },
 ];
 
 const faqs = [
-  ["Preciso de academia?", "Não. O treino tem versão pra casa e pra academia."],
-  ["Serve pra iniciante?", "Sim. Programa pra iniciante, intermediário e avançado."],
-  ["Quanto tempo leva pra sentir diferença?", "O método ataca a causa raiz — a maioria sente diferença na energia já nos primeiros dias."],
-  ["Por quanto tempo tenho acesso?", "Vitalício."],
-  ["Como recebo o acesso?", "Na hora, por e-mail, após confirmação do pagamento."],
+  ["O que é a Comunidade da Selva?", "É um grupo para pessoas que saíram do tradicional e querem aprender, aplicar e evoluir ao lado de pessoas alinhadas ao mesmo objetivo."],
+  ["O Plano Selva está incluído?", "Sim. Você recebe o Plano Selva completo, com todos os módulos, mapas e materiais práticos."],
+  ["Como funcionam os seminários?", "Toda semana, o Ryan conduz um novo seminário sobre ancestralidade para aprofundar o conhecimento da comunidade."],
+  ["O que são as indicações do Ryan?", "São recomendações de produtos das marcas parceiras que patrocinam o trabalho do Ryan."],
+  ["Por quanto tempo tenho acesso?", "Você mantém o acesso ao Plano Selva, aos seminários e à comunidade enquanto sua assinatura estiver ativa."],
+  ["Como recebo o acesso?", "O acesso é enviado por e-mail após a confirmação do pagamento."],
 ];
 
 function CTA({ children, light = false, className = "" }: { children: React.ReactNode; light?: boolean; className?: string }) {
@@ -57,34 +58,35 @@ export default function Home() {
     <main id="top">
       <section className="hero page-width" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <span className="kicker">PLANO SELVA</span>
-          <h1 id="hero-title">Recupere sua energia, sua libido e sua disposição.</h1>
-          <p>O problema não é força de vontade.</p>
-          <p className="hero-sub">É o que a indústria te ensinou a comer. O <strong>Plano Selva</strong> te leva de volta à comida que seu corpo reconhece.</p>
-          <CTA>Quero entrar no Plano Selva</CTA>
+          <span className="kicker">COMUNIDADE DA SELVA</span>
+          <h1 id="hero-title">Você despertou. Agora esteja cercado por quem também saiu do automático.</h1>
+          <p>UM GRUPO PARA DESPERTADOS.</p>
+          <p className="hero-sub">Entre para um grupo de pessoas alinhadas ao mesmo objetivo: sair do tradicional e retomar o que a modernidade roubou delas.</p>
+          <CTA>QUERO ENTRAR PARA A COMUNIDADE</CTA>
         </div>
 
-        <div className="product-stage" aria-label="Ryan no Plano Selva">
-          <img className="product-cover-image" src="/images/ryan-plano-selva-hero.png" alt="Ryan apresentando o Plano Selva" width="1254" height="1254" />
+        <div className="product-stage" aria-label="Comunidade da Selva">
+          <img className="product-cover-image" src="/images/comunidade-selva-cover.png" alt="Capa da Comunidade da Selva" width="1254" height="1254" />
         </div>
       </section>
 
       <section className="section problem-section page-width" aria-labelledby="problem-title">
-        <div className="section-index">01 <span /> A CAUSA</div>
+        <div className="section-index">01 <span /> O PROBLEMA</div>
         <div className="split-copy">
-          <h2 id="problem-title">Não é culpa sua.<br /><em>E não é “coisa da idade”.</em></h2>
+          <h2 id="problem-title">É difícil sustentar uma vida diferente quando todos ao seu redor continuam vivendo igual.</h2>
           <div className="prose">
-            <p>Você foi ensinado a temer <strong>comida natural</strong>, contar calorias e trocar refeições por produtos.</p>
-            <p>O resultado: <strong className="accent-text">energia baixa, libido em queda e um corpo que não responde.</strong> Não é idade. É uma base errada.</p>
+            <p><strong>Informação sozinha não basta.</strong></p>
+            <p>Sem um ambiente que fortaleça suas escolhas, é fácil voltar aos hábitos e ideias que você decidiu abandonar.</p>
+            <p className="impact-line">Você precisa estar perto de pessoas que enxergam o que você também começou a enxergar.</p>
           </div>
         </div>
       </section>
 
       <section className="dark-panel transformation page-width" aria-labelledby="story-title">
         <div className="panel-heading">
-          <div className="section-index on-dark">02 <span /> ANTES DO PLANO SELVA</div>
-          <h2 id="story-title">O corpo mudou quando a alimentação mudou.</h2>
-          <p>Antes da mudança, <strong>a alimentação convencional escondia o potencial do corpo.</strong></p>
+          <div className="section-index on-dark">02 <span /> A MUDANÇA</div>
+          <h2 id="story-title">O Ryan também precisou sair do tradicional.</h2>
+          <p>Durante anos, ele seguiu <strong>a alimentação e os hábitos que empurram para todo mundo.</strong></p>
         </div>
 
         <div className="before-after">
@@ -105,16 +107,16 @@ export default function Home() {
             <figure><img src="/images/expert-after-02.jpg" alt="Novo expert após a mudança alimentar" width="738" height="1600" /><span>DEPOIS DA MUDANÇA</span></figure>
           </div>
           <div className="story-copy prose on-dark-prose">
-            <p>Os alimentos convencionais que empurraram pra ele durante anos deixavam o corpo sem responder e ofuscavam a aparência que ele realmente podia construir.</p>
-            <p>A virada começou ao trocar essa base por <strong>comida de verdade e uma rotina coerente.</strong> Sem dieta da moda. Sem complicação.</p>
-            <p className="impact-line">O Plano Selva organiza esse caminho.</p>
-            <CTA light>Quero entrar no Plano Selva</CTA>
+            <p>A transformação começou quando ele retomou <strong>a comida de verdade, o treino e uma rotina mais coerente com sua natureza.</strong></p>
+            <p>Sem dieta da moda. Sem complicação.</p>
+            <p className="impact-line">Agora, ele reúne pessoas que escolheram seguir esse mesmo caminho.</p>
+            <CTA light>QUERO FAZER PARTE DA SELVA</CTA>
           </div>
         </div>
       </section>
 
       <section className="section food-section page-width" aria-labelledby="food-title">
-        <div className="section-index">03 <span /> COMIDA DE VERDADE</div>
+        <div className="section-index">03 <span /> A BASE QUE NOS UNE</div>
         <div className="split-copy food-intro">
           <h2 id="food-title">O que vem da terra e do animal. <em>Não do laboratório.</em></h2>
           <div className="prose">
@@ -140,17 +142,17 @@ export default function Home() {
           <span>COMIDA REAL. VIDA REAL.</span>
         </div>
         <div className="solution-copy">
-          <div className="section-index on-dark">04 <span /> A SOLUÇÃO</div>
-          <h2 id="solution-title">Um método simples para <em>voltar a comer de verdade.</em></h2>
+          <div className="section-index on-dark">04 <span /> A COMUNIDADE</div>
+          <h2 id="solution-title">Mais do que um curso. <em>Um ambiente para viver a Selva todos os dias.</em></h2>
           <div className="prose on-dark-prose">
-            <p>O <strong>Plano Selva</strong> te ensina a comer de verdade, treinar direito e recuperar energia, libido e disposição.</p>
+            <p>Dentro da <strong>Comunidade da Selva</strong>, você terá conhecimento, aplicação prática e contato com pessoas que compartilham seus objetivos.</p>
           </div>
           <div className="method-steps">
-            <article><span>01</span><div><h3>Desprogramar</h3><p>Entender as crenças e os hábitos modernos que controlam sua alimentação sem você perceber.</p></div></article>
-            <article><span>02</span><div><h3>Reaproximar</h3><p>Voltar a basear sua alimentação em comida de verdade, sem complicar sua rotina.</p></div></article>
-            <article><span>03</span><div><h3>Reconstruir</h3><p>Usar essa base pra melhorar seu corpo, sua energia e sua saúde de forma sustentável.</p></div></article>
+            <article><span>01</span><div><h3>Entenda</h3><p>Acesse o método completo do Plano Selva e compreenda os princípios da alimentação e do estilo de vida ancestral.</p></div></article>
+            <article><span>02</span><div><h3>Aplique</h3><p>Participe do Desafio de 21 Dias e transforme o conhecimento em ações simples na sua rotina.</p></div></article>
+            <article><span>03</span><div><h3>Permaneça</h3><p>Evolua com os seminários semanais e com pessoas que escolheram o mesmo caminho.</p></div></article>
           </div>
-          <blockquote>A dieta pode acabar. <strong>O conhecimento e a autonomia permanecem.</strong></blockquote>
+          <blockquote>O conhecimento desperta. <strong>O ambiente mantém você no caminho.</strong></blockquote>
         </div>
       </section>
 
@@ -158,7 +160,7 @@ export default function Home() {
         <div className="curriculum-heading">
           <div>
             <div className="section-index">05 <span /> O QUE VOCÊ RECEBE</div>
-            <h2 id="curriculum-title">Tudo o que você recebe <em>no Plano Selva.</em></h2>
+            <h2 id="curriculum-title">O Plano Selva completo, <em>agora dentro da comunidade.</em></h2>
           </div>
           <div className="carousel-controls">
             <button type="button" onClick={() => moveChapters(-1)} aria-label="Item anterior">←</button>
@@ -177,29 +179,29 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="update-note">(Contém atualização periódica de conteúdo)</p>
+        <p className="update-note">Além do método, você recebe o Desafio de 21 Dias, indicações do Ryan, seminários semanais e acesso à comunidade.</p>
 
       </section>
 
       <section className="offer-section page-width" id="oferta" aria-labelledby="offer-title">
         <div className="offer-copy">
-          <div className="section-index on-dark">06 <span /> PREÇO DE LANÇAMENTO</div>
-          <h2 id="offer-title">Entre no <em>Plano Selva.</em></h2>
-          <p><strong>Você recebe tudo desde o primeiro acesso:</strong></p>
+          <div className="section-index on-dark">06 <span /> SUA ASSINATURA</div>
+          <h2 id="offer-title">Entre para a <em>Comunidade da Selva.</em></h2>
+          <p>Por <strong>R$ 47,90 por mês</strong>, você recebe:</p>
           <ul>
-            <li><span>•</span><strong>Acesso ao Plano Selva com mais de 7 módulos de conteúdo</strong></li>
-            <li><span>•</span><strong>Acesso ao Desafio de 21 Dias da Selva</strong></li>
-            <li><span>•</span><strong>Acesso vitalício à área de membros</strong></li>
-            <li><span>•</span><strong>Acesso à Comunidade Selva</strong></li>
-            <li><span>•</span><strong>Atualizações constantes</strong></li>
+            <li><span>•</span><strong>Plano Selva completo com módulos, mapas e guias práticos.</strong></li>
+            <li><span>•</span><strong>Desafio de 21 Dias da Selva.</strong></li>
+            <li><span>•</span><strong>Indicações de produtos das marcas parceiras que patrocinam o Ryan.</strong></li>
+            <li><span>•</span><strong>Seminário semanal sobre ancestralidade.</strong></li>
+            <li><span>•</span><strong>Acesso à Comunidade da Selva.</strong></li>
           </ul>
         </div>
         <div className="price-card">
-          <span>OFERTA DE LANÇAMENTO</span>
-          <p>Tudo isso por apenas</p>
-          <div className="price"><small>R$</small><strong>47,90</strong></div>
-          <CTA light>Quero entrar no Plano Selva</CTA>
-          <p className="price-note">Acesso vitalício + atualizações constantes</p>
+          <span>ASSINATURA MENSAL</span>
+          <p>Entre para a comunidade por</p>
+          <div className="price"><small>R$</small><strong>47,90</strong><small>/mês</small></div>
+          <CTA light>QUERO ENTRAR PARA A COMUNIDADE</CTA>
+          <p className="price-note">Assinatura mensal. O acesso permanece ativo enquanto a assinatura estiver vigente.</p>
         </div>
       </section>
 
@@ -234,21 +236,21 @@ export default function Home() {
 
       <section className="final-section page-width" aria-labelledby="final-title">
         <div className="final-copy">
-          <div className="section-index on-dark">09 <span /> COMECE AGORA</div>
-          <h2 id="final-title">Seu primeiro passo <em>começa aqui.</em></h2>
-          <CTA light>Quero entrar no Plano Selva</CTA>
+          <div className="section-index on-dark">09 <span /> ENTRE PARA A SELVA</div>
+          <h2 id="final-title">Você já percebeu que o tradicional não serve para você. <em>Agora escolha estar próximo de pessoas que também decidiram sair dele.</em></h2>
+          <CTA light>QUERO FAZER PARTE DA SELVA</CTA>
         </div>
         <div className="final-photo"><img loading="lazy" src="/images/expert-after-01.jpg" alt="Novo expert após a mudança alimentar" width="738" height="1600" /><span>VOLTE<br />À SELVA.</span></div>
       </section>
 
       <footer className="site-footer page-width">
-        <a className="brand footer-brand" href="#top"><span className="brand-box">PS</span><span>PLANO SELVA</span></a>
-        <p>© {new Date().getFullYear()} Plano Selva. Todos os direitos reservados.</p>
+        <a className="brand footer-brand" href="#top"><span className="brand-box">CS</span><span>COMUNIDADE DA SELVA</span></a>
+        <p>© {new Date().getFullYear()} Comunidade da Selva. Todos os direitos reservados.</p>
         <a href="#top">VOLTAR AO TOPO ↑</a>
         <small>Este produto oferece conteúdo educacional. Resultados variam conforme contexto, rotina e aplicação individual.</small>
       </footer>
 
-      <a className="mobile-cta" href={CHECKOUT_HREF}><span>ENTRAR NO PLANO</span><strong>R$ 47,90 ↗</strong></a>
+      <a className="mobile-cta" href={CHECKOUT_HREF}><span>ENTRAR NA COMUNIDADE</span><strong>R$ 47,90/MÊS ↗</strong></a>
     </main>
   );
 }
