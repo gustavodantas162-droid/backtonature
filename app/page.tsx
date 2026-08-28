@@ -4,6 +4,13 @@ import { useRef, useState } from "react";
 
 const CHECKOUT_HREF = "https://pay.cakto.com.br/36xoasa_1070318";
 
+// Preencha uma data ou quantidade real quando a condição de fundador for definida.
+// Exemplos: deadlineLabel: "15/09/2026" ou spotsRemaining: 50.
+const FOUNDER_CAMPAIGN: { deadlineLabel: string; spotsRemaining: number | null } = {
+  deadlineLabel: "",
+  spotsRemaining: null,
+};
+
 const foodGallery = [
   { image: "/images/selva-food-04.jpg", title: "Comida da selva", text: "Carne, raízes e frutas: uma base simples, forte e reconhecível." },
   { image: "/images/selva-food-02.jpg", title: "Proteína de verdade", text: "Ovos e carne: densidade nutricional para sustentar energia e vitalidade." },
@@ -29,11 +36,11 @@ const chapters = [
 
 const faqs = [
   ["O que é a Comunidade da Selva?", "É um grupo para pessoas que saíram do tradicional e querem aprender, aplicar e evoluir ao lado de pessoas alinhadas ao mesmo objetivo."],
-  ["O Plano Selva está incluído?", "Sim. Você recebe o Plano Selva completo, com todos os módulos, mapas e materiais práticos."],
-  ["Como funcionam os seminários?", "Toda semana, o Ryan conduz um novo seminário sobre ancestralidade para aprofundar o conhecimento da comunidade."],
-  ["O que são as indicações do Ryan?", "São recomendações de produtos das marcas parceiras que patrocinam o trabalho do Ryan."],
-  ["Por quanto tempo tenho acesso?", "Você mantém o acesso ao Plano Selva, aos seminários e à comunidade enquanto sua assinatura estiver ativa."],
-  ["Como recebo o acesso?", "O acesso é enviado por e-mail após a confirmação do pagamento."],
+  ["O Plano Selva está incluído?", "Sim. O Plano Selva completo está incluído na assinatura, com todos os módulos, mapas e materiais práticos, sem custo adicional enquanto ela estiver ativa."],
+  ["Como funcionam os seminários?", "Os seminários acontecem semanalmente. [CONFIRMAR: se são ao vivo, gravados ou ambos, e em qual área ou plataforma ficam disponíveis.]"],
+  ["O que são as indicações do Ryan?", "São descontos exclusivos em marcas parceiras selecionadas pelo Ryan e compartilhados dentro da comunidade quando estiverem disponíveis."],
+  ["Por quanto tempo tenho acesso?", "O acesso é mantido enquanto a assinatura mensal estiver ativa. A cobrança é recorrente e o acesso termina em caso de cancelamento ou interrupção do pagamento."],
+  ["Como recebo o acesso?", "Depois da confirmação do pagamento, você recebe no e-mail usado na compra o link e as instruções de acesso. [PRAZO DE LIBERAÇÃO A CONFIRMAR.]"],
 ];
 
 function CTA({ children, light = false, className = "" }: { children: React.ReactNode; light?: boolean; className?: string }) {
@@ -41,6 +48,21 @@ function CTA({ children, light = false, className = "" }: { children: React.Reac
     <a className={`cta ${light ? "cta-light" : ""} ${className}`} href={CHECKOUT_HREF}>
       <span>{children}</span><span className="cta-icon" aria-hidden="true">↗</span>
     </a>
+  );
+}
+
+function FounderUrgency() {
+  const detail = FOUNDER_CAMPAIGN.spotsRemaining !== null
+    ? `${FOUNDER_CAMPAIGN.spotsRemaining} vagas disponíveis com esta condição.`
+    : FOUNDER_CAMPAIGN.deadlineLabel
+      ? `Valor de lançamento válido até ${FOUNDER_CAMPAIGN.deadlineLabel}.`
+      : "Valor de lançamento disponível enquanto a condição de fundador estiver ativa.";
+
+  return (
+    <div className="founder-urgency" role="note" aria-label="Condição de fundador">
+      <span aria-hidden="true" />
+      <p><strong>Condição de fundador</strong>{detail}</p>
+    </div>
   );
 }
 
@@ -63,6 +85,7 @@ export default function Home() {
           <p>UM GRUPO PARA DESPERTADOS.</p>
           <p className="hero-sub">Entre para um grupo de pessoas alinhadas ao mesmo objetivo: sair do tradicional e retomar o que a modernidade roubou delas.</p>
           <CTA>QUERO ENTRAR PARA A COMUNIDADE</CTA>
+          <FounderUrgency />
         </div>
 
         <div className="product-stage" aria-label="Comunidade da Selva">
@@ -110,6 +133,10 @@ export default function Home() {
             <p>A transformação começou quando ele retomou <strong>a comida de verdade, o treino e uma rotina mais coerente com sua natureza.</strong></p>
             <p>Sem dieta da moda. Sem complicação.</p>
             <p className="impact-line">Agora, ele reúne pessoas que escolheram seguir esse mesmo caminho.</p>
+            <div className="authority-bio">
+              <strong>Sobre o Ryan</strong>
+              <p>Há <strong>[X anos]</strong> estudando alimentação ancestral e estilo de vida natural, Ryan já ajudou <strong>[X pessoas / número a confirmar]</strong> a saírem do automático e retomarem uma vida mais alinhada com sua natureza.</p>
+            </div>
             <CTA light>QUERO FAZER PARTE DA SELVA</CTA>
           </div>
         </div>
@@ -191,7 +218,8 @@ export default function Home() {
           <ul>
             <li><span>•</span><strong>Plano Selva completo com módulos, mapas e guias práticos.</strong></li>
             <li><span>•</span><strong>Desafio de 21 Dias da Selva.</strong></li>
-            <li><span>•</span><strong>Indicações de produtos das marcas parceiras que patrocinam o Ryan.</strong></li>
+            {/* Para remover este benefício depois, exclua somente o item abaixo. */}
+            <li><span>•</span><strong>Descontos exclusivos em marcas parceiras selecionadas pelo Ryan.</strong></li>
             <li><span>•</span><strong>Seminário semanal sobre ancestralidade.</strong></li>
             <li><span>•</span><strong>Acesso à Comunidade da Selva.</strong></li>
           </ul>
@@ -200,6 +228,7 @@ export default function Home() {
           <span>ASSINATURA MENSAL</span>
           <p>Entre para a comunidade por</p>
           <div className="price"><small>R$</small><strong>47,90</strong><small>/mês</small></div>
+          <FounderUrgency />
           <CTA light>QUERO ENTRAR PARA A COMUNIDADE</CTA>
           <p className="price-note">Assinatura mensal. O acesso permanece ativo enquanto a assinatura estiver vigente.</p>
         </div>
@@ -224,10 +253,24 @@ export default function Home() {
             const isOpen = openFaq === index;
             return (
               <article className={`faq-item ${isOpen ? "open" : ""}`} key={question}>
-                <button type="button" onClick={() => setOpenFaq(isOpen ? null : index)} aria-expanded={isOpen}>
+                <button
+                  id={`faq-question-${index}`}
+                  type="button"
+                  onClick={() => setOpenFaq(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                >
                   <span>{question}</span><i aria-hidden="true">{isOpen ? "−" : "+"}</i>
                 </button>
-                {isOpen ? <div className="faq-answer"><p>{answer}</p></div> : null}
+                <div
+                  id={`faq-answer-${index}`}
+                  className="faq-answer"
+                  role="region"
+                  aria-labelledby={`faq-question-${index}`}
+                  hidden={!isOpen}
+                >
+                  <p>{answer}</p>
+                </div>
               </article>
             );
           })}
