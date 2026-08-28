@@ -30,15 +30,22 @@ test("positions the Community as the product and the Plano Selva as a deliverabl
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
 });
 
-test("includes the approved founder condition, authority placeholder and benefit wording", async () => {
+test("includes the approved founder condition and benefit wording without a placeholder bio", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 
   assert.equal((page.match(/<FounderUrgency \/>/g) ?? []).length, 2);
   assert.match(page, /Condição de fundador/);
-  assert.match(page, /\[X anos\]/);
-  assert.match(page, /\[X pessoas \/ número a confirmar\]/);
+  assert.doesNotMatch(page, /Sobre o Ryan|\[X anos\]|\[X pessoas \/ número a confirmar\]/);
   assert.match(page, /Descontos exclusivos em marcas parceiras selecionadas pelo Ryan/);
   assert.doesNotMatch(page, /Indicações de produtos das marcas parceiras que patrocinam o Ryan/);
+});
+
+test("uses compact rectangular CTAs instead of generic pill buttons", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(css, /\.cta \{[^}]*border-radius: 6px/);
+  assert.match(css, /\.cta-icon \{[^}]*border-left:/);
+  assert.doesNotMatch(css, /\.cta \{[^}]*border-radius: 999px/);
 });
 
 test("keeps every FAQ answer in the accessible accordion markup", async () => {

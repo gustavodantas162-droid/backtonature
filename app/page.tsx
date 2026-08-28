@@ -133,10 +133,6 @@ export default function Home() {
             <p>A transformação começou quando ele retomou <strong>a comida de verdade, o treino e uma rotina mais coerente com sua natureza.</strong></p>
             <p>Sem dieta da moda. Sem complicação.</p>
             <p className="impact-line">Agora, ele reúne pessoas que escolheram seguir esse mesmo caminho.</p>
-            <div className="authority-bio">
-              <strong>Sobre o Ryan</strong>
-              <p>Há <strong>[X anos]</strong> estudando alimentação ancestral e estilo de vida natural, Ryan já ajudou <strong>[X pessoas / número a confirmar]</strong> a saírem do automático e retomarem uma vida mais alinhada com sua natureza.</p>
-            </div>
             <CTA light>QUERO FAZER PARTE DA SELVA</CTA>
           </div>
         </div>
