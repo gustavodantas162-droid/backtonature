@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-const CHECKOUT_HREF = "https://pay.cakto.com.br/36xkx9j_1059298";
+const CHECKOUT_HREF = "https://pay.cakto.com.br/36xoasa_1070318";
 
 const foodGallery = [
   { image: "/images/selva-food-04.jpg", title: "Comida da selva", text: "Carne, raízes e frutas: uma base simples, forte e reconhecível." },

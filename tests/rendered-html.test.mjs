@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const checkout = "https://pay.cakto.com.br/36xkx9j_1059298";
+const checkout = "https://pay.cakto.com.br/36xoasa_1070318";
 
 test("keeps every sales CTA connected to the Cakto checkout", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
