@@ -2,59 +2,52 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const checkout = "https://pay.cakto.com.br/36xoasa_1070318";
+const checkout = "https://pay.cakto.com.br/36xkx9j_1059298";
 
-test("keeps every sales CTA connected to the Cakto checkout", async () => {
+test("connects every sales CTA to the approved Cakto checkout", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-
   assert.match(page, new RegExp(`const CHECKOUT_HREF = "${checkout}"`));
   assert.match(page, /href=\{CHECKOUT_HREF\}/);
-  assert.doesNotMatch(page, /checkout em breve|href="#oferta"/i);
+  assert.doesNotMatch(page, /36xoasa_1070318|checkout em breve/i);
 });
 
-test("positions the Community as the product and the Plano Selva as a deliverable", async () => {
-  const [page, layout, css] = await Promise.all([
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
-  ]);
+test("positions the 21-day challenge as a one-time entry offer", async () => {
+  const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  assert.match(page, /Reconstrua sua rotina de alimentação em/);
+  assert.match(page, /Desafio Selva — 21 Dias/);
+  assert.match(page, /pagamento único de R\$ 47,00/i);
+  assert.doesNotMatch(page, /R\$ 47,90 por mês|ASSINATURA MENSAL|Condição de fundador/i);
+});
 
-  assert.match(page, /COMUNIDADE DA SELVA/);
+test("shows the complete journey and real member-area components", async () => {
+  const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  assert.match(page, /DIAS 1–3/);
+  assert.match(page, /DIAS 15–21/);
+  assert.match(page, /Lista de compras/);
+  assert.match(page, /Modelos de refeições/);
   assert.match(page, /Plano Selva completo/);
-  assert.match(page, /R\$ 47,90 por mês/);
-  assert.match(page, /comunidade-selva-cover\.png/);
-  assert.doesNotMatch(page, /Vitalício|Acesso vitalício|OFERTA DE LANÇAMENTO|PREÇO DE LANÇAMENTO/i);
-  assert.match(layout, /Comunidade da Selva \| Um grupo para despertados/);
-  assert.match(layout, /comunidade-selva-cover\.png/);
-  assert.doesNotMatch(css, /jungle-depth|jungle-light|perspective:|translateZ|backdrop-filter/);
-  assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(page, /Comunidade da Selva/);
 });
 
-test("includes the approved founder condition and benefit wording without a placeholder bio", async () => {
+test("uses Ryan's story transparently instead of fabricated testimonials", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-
-  assert.equal((page.match(/<FounderUrgency \/>/g) ?? []).length, 2);
-  assert.match(page, /Condição de fundador/);
-  assert.doesNotMatch(page, /Sobre o Ryan|\[X anos\]|\[X pessoas \/ número a confirmar\]/);
-  assert.match(page, /Descontos exclusivos em marcas parceiras selecionadas pelo Ryan/);
-  assert.doesNotMatch(page, /Indicações de produtos das marcas parceiras que patrocinam o Ryan/);
+  assert.match(page, /O desafio organiza os princípios que Ryan aplicou/);
+  assert.match(page, /não promete copiar o corpo de outra pessoa/i);
+  assert.doesNotMatch(page, /depoimentos reais|alunos transformados|mais de \d+ pessoas/i);
 });
 
-test("uses compact rectangular CTAs instead of generic pill buttons", async () => {
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-
-  assert.match(css, /\.cta \{[^}]*border-radius: 6px/);
-  assert.match(css, /\.cta-icon \{[^}]*border-left:/);
-  assert.doesNotMatch(css, /\.cta \{[^}]*border-radius: 999px/);
-});
-
-test("keeps every FAQ answer in the accessible accordion markup", async () => {
+test("keeps every FAQ answer inside accessible accordion markup", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-
-  assert.match(page, /sem custo adicional enquanto ela estiver ativa/);
-  assert.match(page, /Os seminários acontecem semanalmente/);
-  assert.match(page, /A cobrança é recorrente/);
-  assert.match(page, /PRAZO DE LIBERAÇÃO A CONFIRMAR/);
+  assert.match(page, /Esta compra é um pagamento único de R\$ 47,00/);
+  assert.match(page, /sem cobrança automática nesta compra/);
   assert.match(page, /aria-controls=\{`faq-answer-\$\{index\}`\}/);
   assert.match(page, /hidden=\{!isOpen\}/);
+});
+
+test("keeps the jungle atmosphere and excludes a floating mobile CTA", async () => {
+  const [page, css] = await Promise.all([readFile(new URL("../app/page.tsx", import.meta.url), "utf8"), readFile(new URL("../app/globals.css", import.meta.url), "utf8")]);
+  assert.match(css, /jungle-atmosphere\.png/);
+  assert.match(css, /prefers-reduced-motion:reduce/);
+  assert.doesNotMatch(page, /mobile-cta/);
+  assert.doesNotMatch(css, /mobile-cta/);
 });
