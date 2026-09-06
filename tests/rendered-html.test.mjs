@@ -14,15 +14,15 @@ test("connects every sales CTA to the approved Cakto checkout", async () => {
 test("positions the 21-day challenge as a one-time entry offer", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   assert.match(page, /Reconstrua sua rotina de alimentação em/);
-  assert.match(page, /Desafio Selva — 21 Dias/);
+  assert.match(page, /PLANO SELVA • DESAFIO DE 21 DIAS/);
   assert.match(page, /pagamento único de R\$ 47,00/i);
   assert.doesNotMatch(page, /R\$ 47,90 por mês|ASSINATURA MENSAL|Condição de fundador/i);
 });
 
 test("shows the complete journey and real member-area components", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-  assert.match(page, /DIAS 1–3/);
-  assert.match(page, /DIAS 15–21/);
+  assert.match(page, /Jornada diária de 21 dias/);
+  assert.match(page, /23 páginas na área de membros/);
   assert.match(page, /Lista de compras/);
   assert.match(page, /Modelos de refeições/);
   assert.match(page, /Plano Selva completo/);
@@ -31,9 +31,15 @@ test("shows the complete journey and real member-area components", async () => {
 
 test("uses Ryan's story transparently instead of fabricated testimonials", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-  assert.match(page, /O desafio organiza os princípios que Ryan aplicou/);
-  assert.match(page, /não promete copiar o corpo de outra pessoa/i);
+  assert.match(page, /O desafio organiza, em 21 dias, os princípios que Ryan Stevan aplicou/);
+  assert.match(page, /não uma garantia de resultado individual/i);
   assert.doesNotMatch(page, /depoimentos reais|alunos transformados|mais de \d+ pessoas/i);
+});
+
+test("uses the new Plano Selva 21 Dias product cover", async () => {
+  const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  assert.match(page, /plano-selva-21-dias-cover\.png/);
+  assert.match(page, /Capa do Plano Selva 21 Dias/);
 });
 
 test("keeps every FAQ answer inside accessible accordion markup", async () => {
